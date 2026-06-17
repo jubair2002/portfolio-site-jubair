@@ -14,8 +14,8 @@
     }
 
     :root {
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
+      --accent: #059669;
+      --accent-hover: #047857;
       --text-primary: #0f172a;
       --text-muted: #64748b;
       --bg: #ffffff;
@@ -135,7 +135,7 @@
     .nav-resume-btn:hover {
       background: var(--accent-hover);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
     }
 
     .theme-toggle {
@@ -190,8 +190,8 @@
       justify-content: center;
     }
 
-    /* Centered content wrapper — exclude hero banner/panel so they stay full viewport width */
-    section > div:not(.mobile-toggle):not(.nav-container):not(.hero-banner):not(.hero-portfolio-panel) {
+    /* Centered content wrapper - exclude hero panel so it stays full viewport width */
+    section > div:not(.mobile-toggle):not(.nav-container):not(.hero-portfolio-panel) {
       width: 100%;
       max-width: var(--container-width);
     }
@@ -216,41 +216,21 @@
       background: var(--accent);
     }
 
-    /* Hero — banner + overlapping profile (reference layout) */
     section.hero-portfolio {
       padding: 0;
       display: block;
       padding-top: var(--nav-height);
     }
 
-    section.hero-portfolio > .hero-banner,
     section.hero-portfolio > .hero-portfolio-panel {
       max-width: none;
       width: 100%;
     }
 
-    .hero-banner {
-  position: relative;
-  width: 100%;
-  height: min(56vw, 400px);
-  min-height: 260px;
-  overflow: hidden;
-  background: #1e293b url('backgroundImage.png') top center / 100% auto no-repeat;
-}
-
-    .hero-banner::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.35) 100%);
-      z-index: 2;
-      pointer-events: none;
-    }
-
     .hero-portfolio-panel {
       position: relative;
       background: var(--bg);
-      padding: 0 1.5rem 4rem;
+      padding: 8rem 1.5rem 4rem;
       text-align: center;
     }
 
@@ -269,7 +249,7 @@
       border-radius: 14px;
       border: 5px solid var(--bg);
       box-shadow: 0 10px 40px var(--shadow);
-      margin-top: -100px;
+      margin-top: 0;
       position: relative;
       z-index: 3;
     }
@@ -522,15 +502,20 @@
     }
     .cert-row-card .cert-left {
       flex: 1;
+      display: flex;
+      align-items: flex-start;
+      gap: 2.5rem;
+      min-width: 0;
     }
     .cert-row-card .cert-link {
       flex-shrink: 0;
+      margin-left: auto;
     }
 
     .project-icon, .experience-icon, .timeline-icon, .cert-icon {
       width: 70px;
       height: 70px;
-      background: rgba(37, 99, 235, 0.05);
+      background: rgba(5, 150, 105, 0.08);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -550,7 +535,7 @@
       font-family: 'Space Mono', monospace;
       font-size: 0.7rem;
       padding: 0.3rem 0.8rem;
-      background: rgba(37, 99, 235, 0.1);
+      background: rgba(5, 150, 105, 0.12);
       color: var(--accent);
       border-radius: 4px;
       font-weight: 600;
@@ -613,7 +598,7 @@
       display: inline-block;
     }
 
-    .email-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3); }
+    .email-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3); }
 
     footer {
       padding: 3rem 2rem;
@@ -673,6 +658,16 @@
         gap: 1.5rem;
         padding: 1.5rem;
       }
+      .cert-row-card {
+        align-items: stretch;
+      }
+      .cert-row-card .cert-left {
+        gap: 1.5rem;
+      }
+      .cert-row-card .cert-link {
+        align-self: flex-start;
+        margin-left: 0;
+      }
       
       .section-title { font-size: 2rem; }
       section { padding: 4rem 1.5rem; }
@@ -680,7 +675,7 @@
       .hero-portfolio-avatar {
         width: 160px;
         height: 160px;
-        margin-top: -80px;
+        margin-top: 0;
       }
       .skills-grid { grid-template-columns: repeat(3, 1fr); }
     }
@@ -730,10 +725,9 @@
   </div>
 
   <section id="home" class="hero-portfolio">
-    <div class="hero-banner" role="img" aria-label="Hero banner"></div>
     <div class="hero-portfolio-panel">
       <div class="hero-portfolio-inner">
-        <img src="myimage.jpg" alt="Habibullah Jubair" class="hero-portfolio-avatar" width="200" height="200" />
+        <img src="mypic.jpg" alt="Habibullah Jubair" class="hero-portfolio-avatar" width="200" height="200" />
 <!--        <p class="hero-name-en">Dhaka, Bangladesh</p> -->
         <h1 class="hero-name-primary">Habibullah Jubair</h1>
         <p class="hero-role-title">DevOps &amp; Cloud Engineer</p>
@@ -1072,7 +1066,7 @@
       <h2 class="section-title">Certifications</h2>
       <div class="cert-list">
         <div class="cert-row-card">
-          <div class="cert-left" style="display: flex; align-items: center; gap: 2rem;">
+          <div class="cert-left">
             <div class="cert-icon"><i class="fab fa-redhat"></i></div>
             <div class="cert-info">
               <h3>RedHat System Administration</h3>
@@ -1085,7 +1079,7 @@
         </div>
         
         <div class="cert-row-card">
-          <div class="cert-left" style="display: flex; align-items: center; gap: 2rem;">
+          <div class="cert-left">
             <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
             <div class="cert-info">
               <h3>Security For Engineer</h3>
@@ -1098,7 +1092,7 @@
         </div>
 
         <div class="cert-row-card">
-          <div class="cert-left" style="display: flex; align-items: center; gap: 2rem;">
+          <div class="cert-left">
             <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
             <div class="cert-info">
               <h3>CCNAv7: Introduction to Networks</h3>
@@ -1111,7 +1105,7 @@
         </div>
 
         <div class="cert-row-card">
-          <div class="cert-left" style="display: flex; align-items: center; gap: 2rem;">
+          <div class="cert-left">
             <div class="cert-icon"><i class="fas fa-infinity"></i></div>
             <div class="cert-info">
               <h3>DevOps For Engineer</h3>
