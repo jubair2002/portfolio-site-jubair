@@ -480,6 +480,14 @@
       object-fit: contain;
       flex-shrink: 0;
     }
+
+    .skill-item img.skill-icon-tint {
+      filter: invert(42%) sepia(93%) saturate(456%) hue-rotate(122deg) brightness(92%) contrast(96%);
+    }
+
+    [data-theme="dark"] .skill-item img.skill-icon-tint {
+      filter: invert(62%) sepia(52%) saturate(456%) hue-rotate(112deg) brightness(95%) contrast(92%);
+    }
     .skill-item span {
       font-size: 0.8rem;
       font-weight: 600;
@@ -502,30 +510,197 @@
     }
 
     .projects-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--border);
     }
 
     .project-row-card {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      padding: 1.15rem 1.25rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
-      height: 100%;
-      min-height: 280px;
+      display: grid;
+      grid-template-columns: 1fr 140px;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1.5rem 0.15rem 1.5rem 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      transition: background 0.25s ease, padding-left 0.25s ease;
+      min-height: 148px;
+      position: relative;
+    }
+
+    .project-row-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+
+    .project-row-card:hover {
+      background: color-mix(in srgb, var(--accent) 4%, transparent);
+      border-color: var(--border);
+      box-shadow: none;
+      transform: none;
+      padding-left: 0.75rem;
+    }
+
+    .project-row-card:hover::before {
+      width: 3px;
+    }
+
+    .project-icon,
+    .project-index,
+    .projects-intro,
+    .project-meta {
+      display: none;
     }
 
     .project-details {
       display: flex;
       flex-direction: column;
-      flex: 1;
-      min-height: 0;
+      justify-content: center;
+      gap: 0.55rem;
+      min-width: 0;
       width: 100%;
+      height: 100%;
+    }
+
+    .project-details h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .project-details p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      max-width: none;
+      min-height: 2.85em;
+      margin: 0;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0;
+      min-height: 1.7rem;
+      align-items: center;
+    }
+
+    .tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      padding: 0.25rem 0.5rem;
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .project-row-card:hover .tag {
+      border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+      color: var(--text-primary);
+    }
+
+    .project-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+      width: 140px;
+      min-width: 140px;
+      align-self: center;
+    }
+
+    .btn-project {
+      padding: 0.5rem 0.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      box-sizing: border-box;
+      height: 38px;
+      width: 100%;
+      min-width: 0;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .btn-code {
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      background: var(--bg);
+    }
+
+    .btn-code:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+      transform: translateY(-1px);
+    }
+
+    .btn-live {
+      background: var(--accent);
+      color: white;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-live:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-row-card,
+      .project-row-card::before,
+      .btn-project {
+        transition: none;
+      }
+    }
+
+    .cert-link {
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: 0.3s;
+      box-sizing: border-box;
+      height: 36px;
+      min-width: 118px;
+      white-space: nowrap;
+      background: var(--accent);
+      color: white;
+      border: 1px solid var(--accent);
     }
 
     .timeline-row-card,
@@ -546,19 +721,12 @@
       align-items: flex-start;
     }
 
-    .project-row-card:hover,
     .experience-row-card:hover,
     .timeline-row-card:hover,
     .cert-row-card:hover {
       border-color: var(--accent);
       box-shadow: 0 8px 22px var(--shadow);
       transform: translateY(-2px);
-    }
-
-    .project-row-card .project-icon {
-      width: 42px;
-      height: 42px;
-      font-size: 1.15rem;
     }
 
     .timeline-row-card .timeline-icon,
@@ -588,7 +756,7 @@
       min-width: 0;
     }
 
-    .project-icon, .experience-icon, .timeline-icon, .cert-icon {
+    .experience-icon, .timeline-icon, .cert-icon {
       width: 56px;
       height: 56px;
       background: rgba(5, 150, 105, 0.08);
@@ -601,7 +769,6 @@
       flex-shrink: 0;
     }
 
-    .project-details h3,
     .experience-content h3,
     .timeline-content h3,
     .cert-info h3 {
@@ -610,19 +777,11 @@
       line-height: 1.3;
     }
 
-    .project-details p,
     .timeline-content p,
     .cert-info p {
       font-size: 0.95rem;
       color: var(--text-muted);
       line-height: 1.5;
-    }
-
-    .project-details p {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
     }
 
     .timeline-content h4 {
@@ -631,48 +790,6 @@
       color: var(--text-primary);
       margin-bottom: 0.35rem;
     }
-
-    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.65rem 0; }
-    .tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      padding: 0.2rem 0.55rem;
-      background: rgba(5, 150, 105, 0.12);
-      color: var(--accent);
-      border-radius: 4px;
-      font-weight: 600;
-    }
-
-    .project-actions {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 0.5rem;
-      margin-top: auto;
-      padding-top: 0.75rem;
-      min-height: 38px;
-      align-items: center;
-    }
-
-    .btn-project, .cert-link {
-      padding: 0.45rem 0.9rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.8rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.45rem;
-      transition: 0.3s;
-      box-sizing: border-box;
-      height: 36px;
-      min-width: 118px;
-      white-space: nowrap;
-    }
-
-    .btn-code { border: 1px solid var(--accent); color: var(--accent); background: transparent; }
-    .btn-code:hover { background: var(--accent); color: white; }
-    .btn-live, .cert-link { background: var(--accent); color: white; border: 1px solid var(--accent); }
 
     /* Experience Specifics */
     .experience-date, .timeline-date {
@@ -753,7 +870,6 @@
     @media (max-width: 1080px) {
       .social-links, .email-side { display: none; }
       .skills-grid { grid-template-columns: repeat(5, 1fr); }
-      .projects-list { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -772,11 +888,27 @@
       .nav-links { flex-direction: column; align-items: center; }
 
       .projects-list {
-        grid-template-columns: 1fr;
+        border-top: 1px solid var(--border);
       }
 
       .project-row-card {
+        grid-template-columns: 1fr;
+        gap: 1rem;
         min-height: 0;
+        padding: 1.35rem 0;
+        align-items: stretch;
+      }
+
+      .project-actions {
+        width: 100%;
+        min-width: 0;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      .btn-project {
+        width: auto;
+        min-width: 118px;
       }
 
       .timeline-row-card,
@@ -882,27 +1014,28 @@
       <div class="about-content">
         <div class="about-text">
           <p>
-            Hello! I'm Jubair, a DevOps and Cloud Engineer based in Dhaka, Bangladesh. I enjoy building 
-            things that live in the cloud and solving complex infrastructure challenges.
+            Hello! I'm Jubair, a junior DevOps engineer based in Dhaka, Bangladesh.
+            I like automating deployments, working with cloud tools, and learning how real systems stay reliable.
           </p>
           <p>
-            My journey in tech started with a passion for automation and systems architecture. Fast-forward 
-            to today, and I've had the privilege of working on <strong>production-grade cloud infrastructure</strong>, 
-            implementing <strong>CI/CD pipelines</strong>, and orchestrating <strong>containerized applications</strong> 
-            at scale.
+            I practice <strong>CI/CD</strong>, containers with <strong>Docker &amp; Kubernetes</strong>,
+            and infrastructure as code. I also focus on understanding how systems work end to end —
+            from basic <strong>system architecture</strong> to how services connect, deploy, and stay reliable.
+            I use <strong>AI assistants</strong> to speed up scripting, debugging, and day-to-day DevOps tasks
+            while I keep building hands-on skills.
           </p>
           <p>
-            I'm currently pursuing my Bachelor's in Computer Science & Engineering at United International University 
-            while continuously learning and experimenting with cutting-edge DevOps technologies.
+            I'm currently studying Computer Science &amp; Engineering at United International University
+            and growing through personal projects, labs, and continuous learning.
           </p>
-          <p>Here are some technologies I've been working with recently:</p>
+          <p>Tools I'm comfortable working with:</p>
           <ul class="tech-list">
-            <li>Kubernetes & Docker</li>
-            <li>Terraform & Ansible</li>
-            <li>AWS & Azure</li>
-            <li>GitLab CI & Jenkins</li>
-            <li>Prometheus & Grafana</li>
-            <li>Linux Administration</li>
+            <li>Kubernetes &amp; Docker</li>
+            <li>Terraform &amp; Ansible</li>
+            <li>AWS &amp; Azure</li>
+            <li>GitHub Actions &amp; GitLab CI</li>
+            <li>Prometheus &amp; Grafana</li>
+            <li>AI-assisted DevOps workflows</li>
           </ul>
         </div>
       </div>
@@ -928,10 +1061,6 @@
         <div class="skill-item">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible" />
           <span>Ansible</span>
-        </div>
-        <div class="skill-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" />
-          <span>Jenkins</span>
         </div>
         <div class="skill-item">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" />
@@ -970,6 +1099,18 @@
           <span>Prometheus</span>
         </div>
         <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fluentbit.svg" alt="Fluent Bit" class="skill-icon-tint" />
+          <span>Fluent Bit</span>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" />
+          <span>Elasticsearch</span>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kibana/kibana-original.svg" alt="Kibana" />
+          <span>Kibana</span>
+        </div>
+        <div class="skill-item">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
           <span>Linux</span>
         </div>
@@ -992,158 +1133,112 @@
   <section id="projects" class="reveal">
     <div>
       <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-list"> 
+      <div class="projects-list">
 
-        <div class="project-row-card">
-          <div class="project-icon"><i class="fas fa-infinity"></i></div>
+        <article class="project-row-card">
           <div class="project-details">
-            <h3>production-grade 3Tier DevSecOps project</h3>
-            <p>Deploy and Create a production grade full stack 3Tier application with DevSecOps End-to-End Automated pipeline on AWS EKS cluster using github action and ArgoCD GitOps </p>
+            <h3>Production-Grade 3-Tier DevSecOps</h3>
+            <p>End-to-end automated pipeline for a full-stack 3-tier app on AWS EKS using GitHub Actions and ArgoCD GitOps.</p>
             <div class="project-tags">
-              <span class="tag">Github Actions</span>
-              <span class="tag">Trivy FS</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Trivy</span>
               <span class="tag">AWS EKS</span>
               <span class="tag">SonarQube</span>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/jubair2002/production-grade-3Tier-DevSecOps-project.git" class="btn-project btn-code" target="_blank">
-                <i class="fab fa-github"></i> View Code
-              </a>
-            </div>
           </div>
-        </div>
+          <div class="project-actions">
+            <a href="https://github.com/jubair2002/production-grade-3Tier-DevSecOps-project.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </article>
 
-        <div class="project-row-card">
-          <div class="project-icon"><i class="fas fa-infinity"></i></div>
+        <article class="project-row-card">
           <div class="project-details">
             <h3>CI/CD Pipeline with GitOps</h3>
-            <p>Automated continuous integration and deployment pipeline using GitLab CI, Kubernetes, and ArgoCD with monitoring and rollback capabilities.</p>
+            <p>Automated continuous integration and deployment with GitLab CI, Kubernetes, and ArgoCD including rollback paths.</p>
             <div class="project-tags">
               <span class="tag">GitLab CI</span>
               <span class="tag">Docker</span>
               <span class="tag">ArgoCD</span>
               <span class="tag">Kubernetes</span>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/jubair2002/gitlab-ci-cd-with-GitOps-Project.git" class="btn-project btn-code" target="_blank">
-                <i class="fab fa-github"></i> View Code
-              </a>
-            </div>
           </div>
-        </div>
+          <div class="project-actions">
+            <a href="https://github.com/jubair2002/gitlab-ci-cd-with-GitOps-Project.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </article>
 
-        <div class="project-row-card">
-          <div class="project-icon"><i class="fas fa-cloud"></i></div>
+        <article class="project-row-card">
           <div class="project-details">
-            <h3>Ml Model Deployment with github actions</h3>
-            <p>Deployed a machine learning model using GitHub Actions for continuous integration and deployment.</p>
+            <h3>ML Model Deployment with GitHub Actions</h3>
+            <p>CI/CD for machine learning model packaging and deployment onto Kubernetes using GitHub Actions.</p>
             <div class="project-tags">
               <span class="tag">GitHub Actions</span>
               <span class="tag">Machine Learning</span>
-              <span class="tag">CI CD</span>
-              <span class="tag">Model Deployment on kubernetes</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/jubair2002/ml-model-deployment-github-actions.git" class="btn-project btn-code" target="_blank">
-                <i class="fab fa-github"></i> View Code
-              </a>
+              <span class="tag">Kubernetes</span>
             </div>
           </div>
-        </div>
+          <div class="project-actions">
+            <a href="https://github.com/jubair2002/ml-model-deployment-github-actions.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </article>
 
-        <div class="project-row-card">
-          <div class="project-icon"><i class="fas fa-cloud"></i></div>
+        <article class="project-row-card">
           <div class="project-details">
             <h3>Production-Ready IaC Deployment</h3>
-            <p>Implemented production-ready infrastructure using Terraform and Azure DevOps with modular architecture for enhanced reusability.</p>
+            <p>Modular Terraform infrastructure on Azure DevOps for reusable, production-ready cloud environments.</p>
             <div class="project-tags">
               <span class="tag">Terraform</span>
               <span class="tag">Azure DevOps</span>
               <span class="tag">IaC</span>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/jubair2002/azure-iac-deployment-terraform.git" class="btn-project btn-code" target="_blank">
-                <i class="fab fa-github"></i> View Code
-              </a>
-            </div>
           </div>
-        </div>
+          <div class="project-actions">
+            <a href="https://github.com/jubair2002/azure-iac-deployment-terraform.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </article>
 
-        <div class="project-row-card">
-          <div class="project-icon"><i class="fas fa-server"></i></div>
+        <article class="project-row-card">
           <div class="project-details">
             <h3>Microservice Deployment in AKS</h3>
-            <p>Full microservice application deployment using Docker & Kubernetes with separate namespaces, Ingress, and HPA for high scalability.</p>
+            <p>Dockerized microservices on AKS with namespaces, Ingress, and HPA for scalable delivery.</p>
             <div class="project-tags">
               <span class="tag">AKS</span>
               <span class="tag">Nginx Ingress</span>
               <span class="tag">MySQL</span>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/jubair2002/microservice-app-deployment-with-docker-and-k8s.git" class="btn-project btn-code" target="_blank">
-                <i class="fab fa-github"></i> View Code
-              </a>
-            </div>
           </div>
-        </div>
-        <div class="project-row-card">
-          <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="project-actions">
+            <a href="https://github.com/jubair2002/microservice-app-deployment-with-docker-and-k8s.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </article>
+
+        <article class="project-row-card">
           <div class="project-details">
-            <h3>Kubernetes cluster monitoring</h3>
-            <p>Monitoring and alerting for Kubernetes clusters using Prometheus, Grafana, Loki, and Alertmanager.</p>
+            <h3>Kubernetes Cluster Monitoring</h3>
+            <p>Observability stack for Kubernetes with Prometheus, Grafana, Loki, and Alertmanager.</p>
             <div class="project-tags">
               <span class="tag">Prometheus</span>
               <span class="tag">Grafana</span>
-              <span class="tag">Kubernetes</span>
               <span class="tag">Loki</span>
               <span class="tag">Alertmanager</span>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/jubair2002/devops-cluster-monitoring-stack.git" class="btn-project btn-code" target="_blank">
-                <i class="fab fa-github"></i> View Code
-              </a>
-            </div>
           </div>
-        </div>
-
-        <div class="project-row-card">
-          <div class="project-icon"><i class="fas fa-utensils"></i></div>
-          <div class="project-details">
-            <h3>Meal Management System</h3>
-            <p>Comprehensive solution for managing home meal planning, tracking budget, and monthly reports.</p>
-            <div class="project-tags">
-              <span class="tag">PHP</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">HTML/CSS</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/jubair2002/meal-management-system" class="btn-project btn-code" target="_blank">
-                <i class="fab fa-github"></i> View Code
-              </a>
-              <a href="https://mealmama.page.gd/" class="btn-project btn-live" target="_blank">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-            </div>
+          <div class="project-actions">
+            <a href="https://github.com/jubair2002/devops-cluster-monitoring-stack.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> View Code
+            </a>
           </div>
-        </div>
-
-        <div class="project-row-card">
-          <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
-          <div class="project-details">
-            <h3>E-Commerce Platform</h3>
-            <p>Digital platform managing customers, merchants, and delivery tracking built with JavaFX.</p>
-            <div class="project-tags">
-              <span class="tag">JavaFX</span>
-              <span class="tag">SceneBuilder</span>
-              <span class="tag">SCSS</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/jubair2002/e-commerce-javafx" class="btn-project btn-code" target="_blank">
-                <i class="fab fa-github"></i> View Code
-              </a>
-            </div>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
