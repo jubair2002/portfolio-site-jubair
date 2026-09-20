@@ -792,13 +792,28 @@
     }
 
     /* Experience Specifics */
+    .experience-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .experience-header h3 {
+      margin: 0;
+      flex: 1;
+    }
+
     .experience-date, .timeline-date {
       font-family: 'Space Mono', monospace;
       color: var(--accent);
       font-weight: 700;
       font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-      display: block;
+      display: inline-block;
+      white-space: nowrap;
+      text-align: right;
+      line-height: 1.5;
     }
 
     .experience-content ul { list-style: none; margin-top: 1rem; }
@@ -1245,22 +1260,25 @@
 
   <section id="experience" class="reveal">
     <div>
-      <h2 class="section-title">Work Experience</h2>
+      <h2 class="section-title">Professional Experience</h2>
       <div class="experience-list">
         <div class="experience-row-card">
           <div class="experience-icon"><i class="fas fa-briefcase"></i></div>
           <div class="experience-content">
-            <span class="experience-date">2025 - Present</span>
-            <h3>DevOps Engineer (Self Placed)</h3>
-            <p>Working on personal projects and contributing to cloud automation solutions.</p>
+            <div class="experience-header">
+              <h3>DevOps &amp; Cloud Engineering Intern</h3>
+              <span class="experience-date">Sep 2026 – Oct 2026</span>
+            </div>
+            <p>Codomax Digital Solutions</p>
             <ul>
-              <li>Designing CI/CD pipelines using GitLab CI, Jenkins, and ArgoCD</li>
-              <li>Deploying microservices applications on Kubernetes clusters (AKS)</li>
-              <li>Managing infrastructure as code using Terraform</li>
-              <li>Implementing monitoring solutions with Prometheus and Grafana</li>
+              <li>Completed a hands-on DevOps internship covering Linux administration, cloud infrastructure, networking, Docker, CI/CD, and monitoring.</li>
+              <li>Automated application build, testing, containerization, and deployment workflows using Git, GitHub, Docker, and CI/CD pipelines.</li>
+              <li>Deployed and configured cloud-based applications across compute, networking, storage, database, security, and monitoring services.</li>
+              <li>Delivered a DevOps and Cloud capstone integrating containerized applications, CI/CD automation, managed services, and application monitoring.</li>
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </section>
