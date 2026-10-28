@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Habibullah Jubair - DevOps & Cloud Engineer</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -43,8 +46,8 @@
       overflow-x: hidden;
     }
 
-    html { 
-      scroll-behavior: smooth; 
+    html {
+      scroll-behavior: smooth;
       scroll-padding-top: var(--nav-height);
     }
 
@@ -113,11 +116,13 @@
       transition: width 0.3s ease;
     }
 
-    .nav-links a:hover, .nav-links a.active {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--accent);
     }
 
-    .nav-links a:hover::before, .nav-links a.active::before {
+    .nav-links a:hover::before,
+    .nav-links a.active::before {
       width: 100%;
     }
 
@@ -159,10 +164,22 @@
       color: white;
       border-color: var(--accent);
     }
-    .theme-toggle .fa-sun { display: none; }
-    .theme-toggle .fa-moon { display: inline; }
-    [data-theme="dark"] .theme-toggle .fa-sun { display: inline; }
-    [data-theme="dark"] .theme-toggle .fa-moon { display: none; }
+
+    .theme-toggle .fa-sun {
+      display: none;
+    }
+
+    .theme-toggle .fa-moon {
+      display: inline;
+    }
+
+    [data-theme="dark"] .theme-toggle .fa-sun {
+      display: inline;
+    }
+
+    [data-theme="dark"] .theme-toggle .fa-moon {
+      display: none;
+    }
 
     /* Mobile Toggle */
     .mobile-toggle {
@@ -192,7 +209,7 @@
     }
 
     /* Centered content wrapper - exclude hero panel so it stays full viewport width */
-    section > div:not(.mobile-toggle):not(.nav-container):not(.hero-portfolio-panel) {
+    section>div:not(.mobile-toggle):not(.nav-container):not(.hero-portfolio-panel) {
       width: 100%;
       max-width: var(--container-width);
     }
@@ -223,7 +240,7 @@
       padding-top: var(--nav-height);
     }
 
-    section.hero-portfolio > .hero-portfolio-panel {
+    section.hero-portfolio>.hero-portfolio-panel {
       max-width: none;
       width: 100%;
     }
@@ -344,8 +361,15 @@
     }
 
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .hero-portfolio-inner {
@@ -363,7 +387,8 @@
       z-index: 100;
     }
 
-    .social-links::after, .email-side::after {
+    .social-links::after,
+    .email-side::after {
       content: '';
       width: 1px;
       height: 90px;
@@ -379,7 +404,10 @@
       text-decoration: none;
     }
 
-    .social-link:hover { color: var(--accent); transform: translateY(-3px); }
+    .social-link:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
 
     .email-side {
       position: fixed;
@@ -410,8 +438,18 @@
     }
 
     /* Sections background logic */
-    #about, #projects, #education, #contact { background: var(--bg-alt); }
-    #skills, #experience, #certifications { background: var(--bg); }
+    #about,
+    #projects,
+    #education,
+    #contact {
+      background: var(--bg-alt);
+    }
+
+    #skills,
+    #experience,
+    #certifications {
+      background: var(--bg);
+    }
 
     .about-text p {
       color: var(--text-muted);
@@ -488,6 +526,7 @@
     [data-theme="dark"] .skill-item img.skill-icon-tint {
       filter: invert(62%) sepia(52%) saturate(456%) hue-rotate(112deg) brightness(95%) contrast(92%);
     }
+
     .skill-item span {
       font-size: 0.8rem;
       font-weight: 600;
@@ -676,6 +715,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .project-row-card,
       .project-row-card::before,
       .btn-project {
@@ -756,7 +796,9 @@
       min-width: 0;
     }
 
-    .experience-icon, .timeline-icon, .cert-icon {
+    .experience-icon,
+    .timeline-icon,
+    .cert-icon {
       width: 56px;
       height: 56px;
       background: rgba(5, 150, 105, 0.08);
@@ -805,7 +847,8 @@
       flex: 1;
     }
 
-    .experience-date, .timeline-date {
+    .experience-date,
+    .timeline-date {
       font-family: 'Space Mono', monospace;
       color: var(--accent);
       font-weight: 700;
@@ -816,7 +859,11 @@
       line-height: 1.5;
     }
 
-    .experience-content ul { list-style: none; margin-top: 1rem; }
+    .experience-content ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
     .experience-content ul li {
       padding-left: 1.5rem;
       position: relative;
@@ -832,10 +879,21 @@
     }
 
     /* Contact Section */
-    .contact-content { text-align: center; }
-    .contact-content h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .contact-content p { max-width: 600px; margin: 0 auto 2.5rem; color: var(--text-muted); }
-    
+    .contact-content {
+      text-align: center;
+    }
+
+    .contact-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-content p {
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      color: var(--text-muted);
+    }
+
     .email-btn {
       padding: 1.2rem 3rem;
       background: var(--accent);
@@ -847,7 +905,10 @@
       display: inline-block;
     }
 
-    .email-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3); }
+    .email-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3);
+    }
 
     footer {
       padding: 3rem 2rem;
@@ -858,19 +919,28 @@
       font-family: 'Space Mono', monospace;
       font-size: 0.85rem;
     }
+
     .footer-links {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
       margin-bottom: 1.5rem;
     }
+
     .footer-links a {
       color: var(--text-muted);
       text-decoration: none;
       transition: color 0.3s;
     }
-    .footer-links a:hover { color: var(--accent); }
-    .footer-copy { margin-bottom: 0.5rem; }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-copy {
+      margin-bottom: 0.5rem;
+    }
+
     .footer-back {
       display: inline-block;
       margin-top: 1rem;
@@ -879,28 +949,49 @@
       font-weight: 600;
       transition: transform 0.3s;
     }
-    .footer-back:hover { transform: translateY(-2px); }
+
+    .footer-back:hover {
+      transform: translateY(-2px);
+    }
 
     /* Responsive Design */
     @media (max-width: 1080px) {
-      .social-links, .email-side { display: none; }
-      .skills-grid { grid-template-columns: repeat(5, 1fr); }
+
+      .social-links,
+      .email-side {
+        display: none;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
     }
 
     @media (max-width: 768px) {
-      .mobile-toggle { display: flex; }
+      .mobile-toggle {
+        display: flex;
+      }
+
       .nav-container {
         display: none;
         position: absolute;
         top: var(--nav-height);
-        left: 0; right: 0;
+        left: 0;
+        right: 0;
         background: var(--bg);
         flex-direction: column;
         padding: 2rem;
         border-bottom: 1px solid var(--border);
       }
-      .nav-container.active { display: flex; }
-      .nav-links { flex-direction: column; align-items: center; }
+
+      .nav-container.active {
+        display: flex;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
 
       .projects-list {
         border-top: 1px solid var(--border);
@@ -939,23 +1030,46 @@
         margin-left: 0;
         align-self: flex-start;
       }
-      
-      .section-title { font-size: 2rem; }
-      section { padding: 4rem 1.5rem; }
-      section.hero-portfolio { padding-top: var(--nav-height); padding-left: 0; padding-right: 0; }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      section.hero-portfolio {
+        padding-top: var(--nav-height);
+        padding-left: 0;
+        padding-right: 0;
+      }
+
       .hero-portfolio-avatar {
         width: 160px;
         height: 160px;
         margin-top: 0;
       }
-      .skills-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     /* Scroll Reveal */
-    .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -980,15 +1094,18 @@
           <i class="fas fa-sun"></i>
           <i class="fas fa-moon"></i>
         </button>
-<!--       <a href="resume.pdf" class="nav-resume-btn">Resume</a> -->
+        <!--       <a href="resume.pdf" class="nav-resume-btn">Resume</a> -->
       </div>
     </nav>
   </header>
 
   <div class="social-links">
-    <a href="https://github.com/jubair2002" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/habibullah-jubair" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://medium.com/@hmjubair12" target="_blank" class="social-link" aria-label="Medium"><i class="fab fa-medium"></i></a>
+    <a href="https://github.com/jubair2002" target="_blank" class="social-link" aria-label="GitHub"><i
+        class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/habibullah-jubair" target="_blank" class="social-link" aria-label="LinkedIn"><i
+        class="fab fa-linkedin"></i></a>
+    <a href="https://medium.com/@hmjubair12" target="_blank" class="social-link" aria-label="Medium"><i
+        class="fab fa-medium"></i></a>
   </div>
 
   <div class="email-side">
@@ -1000,22 +1117,27 @@
     <div class="hero-portfolio-panel">
       <div class="hero-portfolio-inner">
         <img src="mypic.jpg" alt="Habibullah Jubair" class="hero-portfolio-avatar" width="200" height="200" />
-<!--        <p class="hero-name-en">Dhaka, Bangladesh</p> -->
+        <!--        <p class="hero-name-en">Dhaka, Bangladesh</p> -->
         <h1 class="hero-name-primary">Habibullah Jubair</h1>
         <p class="hero-role-title">DevOps &amp; Cloud Engineer</p>
-<!--        <p class="hero-role-org">United International University</p> -->
+        <!--        <p class="hero-role-org">United International University</p> -->
         <div class="hero-social-row">
           <a href="mailto:hmjubair12@gmail.com" aria-label="Email"><i class="fas fa-at"></i></a>
-          <a href="https://medium.com/@hmjubair12" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
-          <a href="https://github.com/jubair2002" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/habibullah-jubair" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://medium.com/@hmjubair12" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i
+              class="fab fa-medium"></i></a>
+          <a href="https://github.com/jubair2002" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/habibullah-jubair" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
         </div>
         <p class="hero-intro">
           I'm a DevOps &amp; Cloud Engineer specializing in scalable cloud infrastructure, Kubernetes orchestration,
           Infrastructure as Code, and CI/CD so teams can ship reliable systems with confidence.
         </p>
-        <a href="https://drive.google.com/file/d/1l4AbbJAvr_5yshmpNKr4fK2W2_pQhLhq/view?usp=sharing" class="hero-resume-btn" id="hero-resume-link" target="_blank" rel="noopener noreferrer">
+        <a href="https://drive.google.com/file/d/1l4AbbJAvr_5yshmpNKr4fK2W2_pQhLhq/view?usp=sharing"
+          class="hero-resume-btn" id="hero-resume-link" target="_blank" rel="noopener noreferrer">
           <i class="fas fa-download"></i>
           Download Resume
         </a>
@@ -1062,7 +1184,8 @@
       <h2 class="section-title">Skills & Technologies</h2>
       <div class="skills-grid">
         <div class="skill-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+            alt="Kubernetes" />
           <span>Kubernetes</span>
         </div>
         <div class="skill-item">
@@ -1070,7 +1193,8 @@
           <span>Docker</span>
         </div>
         <div class="skill-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg"
+            alt="Terraform" />
           <span>Terraform</span>
         </div>
         <div class="skill-item">
@@ -1078,7 +1202,9 @@
           <span>Ansible</span>
         </div>
         <div class="skill-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+            alt="AWS" />
           <span>AWS</span>
         </div>
         <div class="skill-item">
@@ -1110,15 +1236,18 @@
           <span>Grafana</span>
         </div>
         <div class="skill-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg"
+            alt="Prometheus" />
           <span>Prometheus</span>
         </div>
         <div class="skill-item">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fluentbit.svg" alt="Fluent Bit" class="skill-icon-tint" />
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fluentbit.svg" alt="Fluent Bit"
+            class="skill-icon-tint" />
           <span>Fluent Bit</span>
         </div>
         <div class="skill-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg"
+            alt="Elasticsearch" />
           <span>Elasticsearch</span>
         </div>
         <div class="skill-item">
@@ -1153,7 +1282,8 @@
         <article class="project-row-card">
           <div class="project-details">
             <h3>Production-Grade 3-Tier DevSecOps</h3>
-            <p>End-to-end automated pipeline for a full-stack 3-tier app on AWS EKS using GitHub Actions and ArgoCD GitOps.</p>
+            <p>End-to-end automated pipeline for a full-stack 3-tier app on AWS EKS using GitHub Actions and ArgoCD
+              GitOps.</p>
             <div class="project-tags">
               <span class="tag">GitHub Actions</span>
               <span class="tag">Trivy</span>
@@ -1162,7 +1292,8 @@
             </div>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/jubair2002/production-grade-3Tier-DevSecOps-project.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/jubair2002/production-grade-3Tier-DevSecOps-project.git"
+              class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-github"></i> View Code
             </a>
           </div>
@@ -1171,7 +1302,8 @@
         <article class="project-row-card">
           <div class="project-details">
             <h3>CI/CD Pipeline with GitOps</h3>
-            <p>Automated continuous integration and deployment with GitLab CI, Kubernetes, and ArgoCD including rollback paths.</p>
+            <p>Automated continuous integration and deployment with GitLab CI, Kubernetes, and ArgoCD including rollback
+              paths.</p>
             <div class="project-tags">
               <span class="tag">GitLab CI</span>
               <span class="tag">Docker</span>
@@ -1180,7 +1312,8 @@
             </div>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/jubair2002/gitlab-ci-cd-with-GitOps-Project.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/jubair2002/gitlab-ci-cd-with-GitOps-Project.git" class="btn-project btn-code"
+              target="_blank" rel="noopener noreferrer">
               <i class="fab fa-github"></i> View Code
             </a>
           </div>
@@ -1197,7 +1330,8 @@
             </div>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/jubair2002/ml-model-deployment-github-actions.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/jubair2002/ml-model-deployment-github-actions.git" class="btn-project btn-code"
+              target="_blank" rel="noopener noreferrer">
               <i class="fab fa-github"></i> View Code
             </a>
           </div>
@@ -1214,7 +1348,8 @@
             </div>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/jubair2002/azure-iac-deployment-terraform.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/jubair2002/azure-iac-deployment-terraform.git" class="btn-project btn-code"
+              target="_blank" rel="noopener noreferrer">
               <i class="fab fa-github"></i> View Code
             </a>
           </div>
@@ -1231,7 +1366,8 @@
             </div>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/jubair2002/microservice-app-deployment-with-docker-and-k8s.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/jubair2002/microservice-app-deployment-with-docker-and-k8s.git"
+              class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-github"></i> View Code
             </a>
           </div>
@@ -1249,7 +1385,8 @@
             </div>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/jubair2002/devops-cluster-monitoring-stack.git" class="btn-project btn-code" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/jubair2002/devops-cluster-monitoring-stack.git" class="btn-project btn-code"
+              target="_blank" rel="noopener noreferrer">
               <i class="fab fa-github"></i> View Code
             </a>
           </div>
@@ -1266,15 +1403,35 @@
           <div class="experience-icon"><i class="fas fa-briefcase"></i></div>
           <div class="experience-content">
             <div class="experience-header">
+              <h3>Jr. DevOps Engineer</h3>
+              <span class="experience-date">November 2026 – Present</span>
+            </div>
+            <p>Newroz Technology LTD</p>
+            <ul>
+              <li>Supporting CI/CD pipeline automation, containerization workflows, and cloud infrastructure management.
+              </li>
+              <li>Monitoring system performance, maintaining uptime, and assisting with production deployments.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="experience-row-card">
+          <div class="experience-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="experience-content">
+            <div class="experience-header">
               <h3>DevOps &amp; Cloud Engineering Intern</h3>
               <span class="experience-date">Sep 2026 – Oct 2026</span>
             </div>
             <p>Codomax Digital Solutions</p>
             <ul>
-              <li>Completed a hands-on DevOps internship covering Linux administration, cloud infrastructure, networking, Docker, CI/CD, and monitoring.</li>
-              <li>Automated application build, testing, containerization, and deployment workflows using Git, GitHub, Docker, and CI/CD pipelines.</li>
-              <li>Deployed and configured cloud-based applications across compute, networking, storage, database, security, and monitoring services.</li>
-              <li>Delivered a DevOps and Cloud capstone integrating containerized applications, CI/CD automation, managed services, and application monitoring.</li>
+              <li>Completed a hands-on DevOps internship covering Linux administration, cloud infrastructure,
+                networking, Docker, CI/CD, and monitoring.</li>
+              <li>Automated application build, testing, containerization, and deployment workflows using Git, GitHub,
+                Docker, and CI/CD pipelines.</li>
+              <li>Deployed and configured cloud-based applications across compute, networking, storage, database,
+                security, and monitoring services.</li>
+              <li>Delivered a DevOps and Cloud capstone integrating containerized applications, CI/CD automation,
+                managed services, and application monitoring.</li>
             </ul>
           </div>
         </div>
@@ -1332,7 +1489,8 @@
               <p>CSL Training</p>
             </div>
           </div>
-          <a href="https://drive.google.com/file/u/1/d/1Sf8DadTaYx3nCNfkTYV3Co8uBsOziWgq/view" class="cert-link" target="_blank">
+          <a href="https://drive.google.com/file/u/1/d/1Sf8DadTaYx3nCNfkTYV3Co8uBsOziWgq/view" class="cert-link"
+            target="_blank">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
         </div>
@@ -1345,7 +1503,8 @@
               <p>CSL Training</p>
             </div>
           </div>
-          <a href="https://drive.google.com/file/d/1fbwAlalu909pfwqRfKdfvHUaLv1XJkfX/view" class="cert-link" target="_blank">
+          <a href="https://drive.google.com/file/d/1fbwAlalu909pfwqRfKdfvHUaLv1XJkfX/view" class="cert-link"
+            target="_blank">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
         </div>
@@ -1357,7 +1516,8 @@
               <p>NTech Academy</p>
             </div>
           </div>
-          <a href="https://drive.google.com/file/d/1TtsFWfA2rRH3bSRUizN-LSBkTMfT2d86/view?usp=sharing" class="cert-link" target="_blank">
+          <a href="https://drive.google.com/file/d/1TtsFWfA2rRH3bSRUizN-LSBkTMfT2d86/view?usp=sharing" class="cert-link"
+            target="_blank">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
         </div>
@@ -1371,7 +1531,8 @@
               <p>UIU Cisco Networking Academy (CENTeR)</p>
             </div>
           </div>
-          <a href="https://drive.google.com/file/d/1k5ILixLanwNE-LjN_iRl05m1KrepnGME/view" class="cert-link" target="_blank">
+          <a href="https://drive.google.com/file/d/1k5ILixLanwNE-LjN_iRl05m1KrepnGME/view" class="cert-link"
+            target="_blank">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
         </div>
@@ -1384,7 +1545,8 @@
               <p>Cisco Academy</p>
             </div>
           </div>
-          <a href="https://drive.google.com/file/d/1Ygm5Q0tpzb-YV657jX4bpBhY1J5fX5qw/view" class="cert-link" target="_blank">
+          <a href="https://drive.google.com/file/d/1Ygm5Q0tpzb-YV657jX4bpBhY1J5fX5qw/view" class="cert-link"
+            target="_blank">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
         </div>
@@ -1397,7 +1559,8 @@
               <p>UIU Cisco Networking Academy (CENTeR)</p>
             </div>
           </div>
-          <a href="https://drive.google.com/file/d/1RCPee-po9kdxUFneC15ZctBZt27o6wWJ/view" class="cert-link" target="_blank">
+          <a href="https://drive.google.com/file/d/1RCPee-po9kdxUFneC15ZctBZt27o6wWJ/view" class="cert-link"
+            target="_blank">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
         </div>
@@ -1408,13 +1571,15 @@
   <section id="contact" class="reveal">
     <div class="contact-content">
       <h2>Get In Touch</h2>
-      <p>I'm currently open to new opportunities in DevOps and Cloud Engineering. Whether you have a question or just want to say hi, my inbox is always open!</p>
-      
+      <p>I'm currently open to new opportunities in DevOps and Cloud Engineering. Whether you have a question or just
+        want to say hi, my inbox is always open!</p>
+
       <a href="mailto:hmjubair12@gmail.com" class="email-btn">
         <i class="fas fa-envelope"></i> Say Hello
       </a>
 
-      <div style="margin-top: 2rem; color: var(--text-muted); font-family: 'Space Mono', monospace; font-size: 0.95rem;">
+      <div
+        style="margin-top: 2rem; color: var(--text-muted); font-family: 'Space Mono', monospace; font-size: 0.95rem;">
         <i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> Dhaka, Bangladesh
       </div>
     </div>
@@ -1500,4 +1665,5 @@
     checkReveal();
   </script>
 </body>
+
 </html>
